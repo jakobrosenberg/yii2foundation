@@ -2,7 +2,7 @@
     "name": "simpletree/yii2foundation",
     "description": "Foundation extension for Yii 2.",
     "require": {
-         "php": ">=5.3"
+        "[php]": "php"
     },
     "license": "GPL2",
     "authors": [

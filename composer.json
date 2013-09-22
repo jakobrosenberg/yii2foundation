@@ -1,18 +1,14 @@
 {
     "name": "simpletree/yii2foundation",
     "description": "Foundation extension for Yii 2.",
+    "require": {
+        "[php]": "php"
+    },
     "license": "GPL2",
     "authors": [
         {
             "name": "Jakob Rosenberg",
             "email": "jakobrosenberg@gmail.com"
         }
-    ],
-    "minimum-stability": "dev",
-    "require": {
-        "php": ">=5.3.0"
-    },
-    "require": {
-
-    }
+    ]
 }

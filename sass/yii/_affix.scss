@@ -1,0 +1,62 @@
+
+@mixin prefix-postfix-input-base ($size, $float){
+  @extend .row;
+  @extend .collapse;
+  span, a.button {
+    @include prefix-postfix-base;
+    @include grid-column($columns:$size,$float:$float);
+  }
+  input[type="text"], div.custom.dropdown, select{
+    @include grid-column($columns:12-$size);
+  }
+  @include clearfix;
+}
+
+@mixin prefix-input-base ($size) {
+  @include prefix-postfix-input-base($size:$size, $float:left);
+  span { @include prefix; }
+  small { @include grid-column($columns:12-$size, $last-column:true, $float:right); }
+}
+
+@mixin postfix-input-base ($size) {
+  @include prefix-postfix-input-base($size:$size,$float:right);
+  span { @include postfix; }
+  small { @include grid-column($columns:12-$size, $float:left); }
+}
+
+
+$i: 1;
+@while $i < 12 {
+  .small-prefix-#{$i} {
+    @include prefix-input-base($i)
+  }
+  $i: $i + 1;
+}
+
+$i: 1;
+@while $i < 12 {
+  .large-prefix-#{$i} {
+    @media #{$small}{
+      @include prefix-input-base($i)
+    }
+  }
+  $i: $i + 1;
+}
+
+$i: 1;
+@while $i < 12 {
+  .small-suffix-#{$i} {
+    @include postfix-input-base($i)
+  }
+  $i: $i + 1;
+}
+
+$i: 1;
+@while $i < 12 {
+  .large-suffix-#{$i} {
+    @media #{$small}{
+      @include postfix-input-base($i)
+    }
+  }
+  $i: $i + 1;
+}

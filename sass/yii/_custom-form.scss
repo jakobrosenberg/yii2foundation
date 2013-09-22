@@ -1,0 +1,196 @@
+/**
+ * Stylesheet for forms in Yii
+ *
+ * Provides inline styles for the form-horizontal, prefix-group and suffix-group classes
+ *
+ * @author Jakob Rosenberg
+*/
+
+//defaults
+$small-prefix : 3;  $large-prefix : 3;
+$small-suffix : 3;  $large-suffix : 3;
+$small-inline : 3;  $large-inline : 3;
+
+
+
+//$affix-stem-selectors : "&>input, &>small, &>div, &>div.custom.dropdown";
+//$affix-selectors : "&>label, &>span, &>a";
+$affix-stem-selectors : "&>:not(:first-child), &>div.custom.dropdown";
+$affix-selectors : "&>:first-child";
+
+/**
+ * Mixin for:
+ * .prefix-group
+ * .suffix-group
+ * .form-horizontal .form-group
+ *
+ * Use in conjunction with .small-affix-1, .small-affix-2 .small-affix-3 etc. to set the affix column count.
+ * Use in conjunction with .large-affix-1, .large-affix-2 .large-affix-3 etc. to set the affix column count
+ * on large displays.
+ * Sizes defined in conjunction with .prefix-group, .suffix-group and .form-grouptakes precedens over
+ * sizes defined in conjunction with .form-horizontal
+*/
+
+@mixin horizontal-base ($columns, $reverse:false) {
+  $dir : left; $opdir : right;
+  @if $reverse == true {$dir : right; $opdir : left}
+
+
+  //#{$affix-selectors} {
+  #{$affix-selectors} {
+      @include grid-column($columns:$columns, $float:$dir);
+  }
+  &>span{
+    @include prefix-postfix-base;
+    @if $reverse == false {
+      @include prefix;
+    } @else {
+      @include postfix;
+    }
+  }
+  //&>input, &>div, &>div.custom.dropdown {
+  //  @include grid-column($columns:12-$columns, $last-column:true)
+  #{$affix-stem-selectors} {
+    @include grid-column($columns:12-$columns, $last-column:true, $float:$opdir);
+    clear:$opdir;
+  }
+  &>div:not(:first-child) {padding: 0}
+
+  //&>small { @include grid-column($columns:12-$columns, $float:$opdir); }
+
+
+  @include clearfix;
+}
+
+@mixin inline-horizontal-base($columns) {
+  @include horizontal-base($columns);
+  &>label {
+    padding: 0.625em;
+    padding-right: $column-gutter;
+    text-align: right;
+  }
+}
+
+
+
+
+
+
+
+
+@mixin applySizeToChildren($media){
+  $i : 1;
+  @while ($i < 12) {
+    .#{$media}-affix-#{$i}{
+      &>.form-group, &>.prefix-group, &>.suffix-group {
+        #{$affix-selectors} {
+          width: gridCalc($i, $total-columns);
+        }
+      }
+
+      &>.form-group, &>.prefix-group, &>.suffix-group {
+        #{$affix-stem-selectors} {
+          width: gridCalc(12-$i, $total-columns);
+        }
+      }
+    }
+    $i : $i + 1;
+  }
+}
+
+@mixin applySizeToSelf($media){
+  $i : 1;
+  @while ($i < 12) {
+    .#{$media}-affix-#{$i}{
+      &.form-group, &.prefix-group, &.suffix-group {
+        #{$affix-selectors} {
+          width: gridCalc($i, $total-columns);
+        }
+      }
+
+      &.form-group, &.prefix-group, &.suffix-group {
+        #{$affix-stem-selectors} {
+          width: gridCalc(12-$i, $total-columns);
+        }
+      }
+    }
+    $i : $i + 1;
+  }
+}
+
+
+
+
+
+/**
+ * Form
+ */
+
+
+[class*="small-affix-"] .form-group {
+  @include inline-horizontal-base(3);
+}
+
+@media #{$small}{
+  .form-horizontal .form-group {
+    @include inline-horizontal-base(4);
+  }
+}
+
+
+
+/**
+ * Prefix & Suffix
+ */
+
+.prefix-group {
+  @extend .collapse;
+  &>a {@extend .prefix}
+  @include horizontal-base(3);
+}
+
+.suffix-group {
+  @extend .collapse;
+  &>a {@extend .postfix}
+  @include horizontal-base(3, true);
+}
+
+
+
+
+
+
+/**
+ * Sizes
+ * form-group is excluded here to maintain multiline on small screens
+ */
+
+.prefix-group, .suffix-group {
+  #{$affix-selectors} {
+    width: gridCalc($small-prefix, $total-columns);
+  }
+}
+
+
+
+.prefix-group, .suffix-group {
+  #{$affix-stem-selectors} {
+    width: gridCalc(12-$small-prefix, $total-columns);
+  }
+}
+
+
+@include applySizeToChildren(small);
+@include applySizeToSelf(small);
+@media #{$small}{
+  @include applySizeToChildren(large);
+  @include applySizeToSelf(large);
+}
+
+
+
+.has-error {
+  label {@extend .error}
+  input {@extend .error}
+  small {@extend .error}
+}

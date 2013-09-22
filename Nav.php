@@ -5,9 +5,9 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace vendor\simpletree\yii2Foundation;
+namespace vendor\simpletree\yii2foundation;
 
-//use vendor\simpletree\yii2Foundation\Html;
+//use vendor\simpletree\yii2foundation\Html;
 use Yii;
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;

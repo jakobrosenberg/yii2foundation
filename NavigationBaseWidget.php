@@ -5,7 +5,7 @@
  * Time: 12:32
  */
 
-namespace vendor\simpletree\yii2Foundation;
+namespace vendor\simpletree\yii2foundation;
 
 use Yii;
 use yii\helpers\ArrayHelper;

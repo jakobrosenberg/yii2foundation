@@ -5,7 +5,7 @@
  * Time: 19:43
  */
 
-namespace vendor\simpletree\yii2Foundation;
+namespace vendor\simpletree\yii2foundation;
 
 
 class Suffix extends Prefix{

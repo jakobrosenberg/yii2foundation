@@ -5,7 +5,7 @@
  * Time: 21:28
  */
 
-namespace vendor\simpletree\yii2Foundation;
+namespace vendor\simpletree\yii2foundation;
 
 class Breadcrumbs extends \yii\widgets\Breadcrumbs
 {

@@ -4,10 +4,10 @@
  * @copyright Copyright (c) 2008 Yii Software LLC
  * @license http://www.yiiframework.com/license/
  */
-namespace vendor\simpletree\yii2Foundation;
+namespace vendor\simpletree\yii2foundation;
 
 
-//\Yii::$classMap['vendor\simpletree\yii2Foundation\Html'] = __DIR__.'/Html.php';
+//\Yii::$classMap['vendor\simpletree\yii2foundation\Html'] = __DIR__.'/Html.php';
 //\Yii::$classMap['yii\helpers\Html'] = __DIR__.'/Html.php';
 
 
@@ -40,7 +40,7 @@ class FoundationAsset extends AssetBundle
     public $foundationProjectDir = __DIR__;
     public $compileExtention = 'scss';
 
-	public $sourcePath = '@vendor/simpletree/yii2Foundation/assets';
+	public $sourcePath = '@vendor/simpletree/yii2foundation/assets';
 
     public $js = array(
         'js/vendor/custom.modernizr.js',

@@ -5,7 +5,7 @@
  * Time: 09:45
  */
 
-namespace vendor\simpletree\yii2Foundation;
+namespace vendor\simpletree\yii2foundation;
 
 
 

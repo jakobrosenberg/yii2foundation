@@ -5,10 +5,10 @@
  * Time: 15:34
  */
 
-namespace vendor\simpletree\yii2Foundation;
+namespace vendor\simpletree\yii2foundation;
 
 use yii\base\InvalidConfigException;
-use vendor\simpletree\yii2Foundation\Widget;
+use vendor\simpletree\yii2foundation\Widget;
 
 class Prefix extends Widget
 {

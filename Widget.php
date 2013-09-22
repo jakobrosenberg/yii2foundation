@@ -5,14 +5,14 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace vendor\simpletree\yii2Foundation;
+namespace vendor\simpletree\yii2foundation;
 
 use Yii;
 use yii\base\View;
 use yii\helpers\Json;
 
 /**
- * \vendor\simpletree\yii2Foundation\Widget is the base class for all Simpletree Foundation widgets.
+ * \vendor\simpletree\yii2foundation\Widget is the base class for all Simpletree Foundation widgets.
  *
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @author Qiang Xue <qiang.xue@gmail.com>

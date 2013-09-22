@@ -5,10 +5,10 @@
  * Time: 08:18
  */
 
-namespace vendor\simpletree\yii2Foundation;
+namespace vendor\simpletree\yii2foundation;
 
 use Yii;
-use vendor\simpletree\yii2Foundation\Html;
+use vendor\simpletree\yii2foundation\Html;
 
 
 class SideNav extends NavigationBaseWidget

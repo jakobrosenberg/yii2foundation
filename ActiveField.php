@@ -5,9 +5,9 @@
  * Time: 15:07
  */
 
-namespace vendor\simpletree\yii2Foundation;
+namespace vendor\simpletree\yii2foundation;
 
-use vendor\simpletree\yii2Foundation\Html;
+use vendor\simpletree\yii2foundation\Html;
 
 
 class ActiveField extends \yii\widgets\ActiveField{

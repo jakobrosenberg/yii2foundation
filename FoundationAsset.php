@@ -44,7 +44,6 @@ class FoundationAsset extends AssetBundle
 
     public $js = array(
         'js/vendor/custom.modernizr.js',
-        'js/foundation/foundation.dropdown.js'
     );
 	public $css = array(
 		'css/app.css',

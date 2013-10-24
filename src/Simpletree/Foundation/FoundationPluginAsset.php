@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace vendor\simpletree\yii2foundation;
+namespace Simpletree\Foundation;
 
 use yii\web\AssetBundle;
 
@@ -22,7 +22,7 @@ class FoundationPluginAsset extends AssetBundle
 	);
 	public $depends = array(
 		'yii\web\JqueryAsset',
-		'vendor\simpletree\yii2foundation\FoundationAsset',
+		'Simpletree\Foundation\FoundationAsset',
 	);
 
     public function registerAssets($view){

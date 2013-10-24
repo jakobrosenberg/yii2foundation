@@ -6,9 +6,9 @@
  * @author Jakob Rosenberg
  */
 
-namespace vendor\simpletree\yii2foundation;
+namespace Simpletree\Foundation;
 
-use vendor\simpletree\yii2foundation\Html;
+use Simpletree\Foundation\Html;
 
 /**
  * NavBar renders a navbar HTML component.
@@ -18,8 +18,8 @@ use vendor\simpletree\yii2foundation\Html;
  * or [[\yii\widgets\Menu]] to build up such content. For example,
  *
  * ```php
- * use vendor\simpletree\yii2foundation\Nav;
- * use vendor\simpletree\yii2foundation\NavBar;
+ * use Simpletree\Foundation\Nav;
+ * use Simpletree\Foundation\NavBar;
  *
  * NavBar::begin(
  *     array(

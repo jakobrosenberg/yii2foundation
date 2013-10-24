@@ -5,10 +5,10 @@
  * Time: 22:03
  */
 
-namespace vendor\simpletree\yii2foundation;
+namespace Simpletree\Foundation;
 
 use yii\helpers\ArrayHelper;
-use vendor\simpletree\yii2foundation\Html;
+use Simpletree\Foundation\Html;
 
 /**
  * ButtonGroup renders a button group bootstrap component.

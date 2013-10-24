@@ -5,7 +5,7 @@
  * Time: 15:01
  */
 
-namespace vendor\simpletree\yii2foundation;
+namespace Simpletree\Foundation;
 
 
 use yii\base\InvalidConfigException;

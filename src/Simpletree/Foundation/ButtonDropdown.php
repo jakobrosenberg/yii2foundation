@@ -5,11 +5,11 @@
  * Time: 22:36
  */
 
-namespace vendor\simpletree\yii2foundation;
+namespace Simpletree\Foundation;
 
-use vendor\simpletree\yii2foundation\Button;
-use vendor\simpletree\yii2foundation\Widget;
-use vendor\simpletree\yii2foundation\Html;
+use Simpletree\Foundation\Button;
+use Simpletree\Foundation\Widget;
+use Simpletree\Foundation\Html;
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 

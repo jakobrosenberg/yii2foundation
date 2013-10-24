@@ -5,17 +5,17 @@
  * Time: 12:05
  */
 
-namespace vendor\simpletree\yii2foundation;
+namespace Simpletree\Foundation;
 
 use Yii;
 use yii\base\Model;
-use vendor\simpletree\yii2foundation\Html;
+use Simpletree\Foundation\Html;
 use yii\helpers\ArrayHelper;
-use vendor\simpletree\yii2foundation\ActiveField;
+use Simpletree\Foundation\ActiveField;
 
 /**
  * Class ActiveForm
- * @package vendor\simpletree\yii2foundation
+ * @package Simpletree\Foundation
  */
 class ActiveForm extends \yii\widgets\ActiveForm{
 //

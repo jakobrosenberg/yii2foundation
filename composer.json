@@ -9,6 +9,8 @@
         }
     ],
     "autoload": {
-        "psr-0": {"Simpletree\\Foundation\\": "src/"}
+        "psr-0": {
+            "Simpletree\\Foundation\\": "src/"
+        }
     }
 }

@@ -5,7 +5,7 @@
  * Time: 18:12
  */
 
-namespace vendor\simpletree\yii2foundation;
+namespace Simpletree\Foundation;
 
 use yii\base\ErrorException;
 use yii\base\View;

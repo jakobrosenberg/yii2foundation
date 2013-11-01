@@ -4,10 +4,10 @@
  * @copyright Copyright (c) 2008 Yii Software LLC
  * @license http://www.yiiframework.com/license/
  */
-namespace vendor\simpletree\yii2foundation;
+namespace Simpletree\Foundation;
 
 
-//\Yii::$classMap['vendor\simpletree\yii2foundation\Html'] = __DIR__.'/Html.php';
+//\Yii::$classMap['Simpletree\Foundation\Html'] = __DIR__.'/Html.php';
 //\Yii::$classMap['yii\helpers\Html'] = __DIR__.'/Html.php';
 
 

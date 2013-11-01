@@ -5,14 +5,14 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace vendor\simpletree\yii2foundation;
+namespace Simpletree\Foundation;
 
 use Yii;
 use yii\base\View;
 use yii\helpers\Json;
 
 /**
- * \vendor\simpletree\yii2foundation\Widget is the base class for all Simpletree Foundation widgets.
+ * \Simpletree\Foundation\Widget is the base class for all Simpletree Foundation widgets.
  *
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @author Qiang Xue <qiang.xue@gmail.com>
@@ -46,7 +46,7 @@ class Widget extends \yii\base\Widget
      */
     public $encodeLabels = false;
 
-	/**
+    /**
 	 * Initializes the widget.
 	 * This method will register the foundation asset bundle. If you override this method,
 	 * make sure you call the parent implementation first.
@@ -63,12 +63,9 @@ class Widget extends \yii\base\Widget
     {
         $view = $this->getView();
 
-
-
-
         $Asset = FoundationPluginAsset::register($view);
 
-        $view->registerJsFile($Asset->baseUrl.'/js/foundation/foundation.'.$name.'.js');
+        $view->registerJsFile($Asset->baseUrl.'/js/foundation/foundation.'.$name.'.js', array('position'=>$view::POS_END));
     }
 
 

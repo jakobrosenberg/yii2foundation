@@ -5,7 +5,7 @@
  * Time: 09:45
  */
 
-namespace vendor\simpletree\yii2foundation;
+namespace Simpletree\Foundation;
 
 
 
@@ -29,7 +29,7 @@ class Html extends \yii\helpers\Html
      * @param string $class Defaults to "prefix".
      * @return $this
      */
-    public function prefixText($affix, $content, $affixSize = 2, $contentSize = null, $class="prefix")
+    static function prefixText($affix, $content, $affixSize = 2, $contentSize = null, $class="prefix")
     {
         return self::affixText($affix, $content, $affixSize, $contentSize, $class, 'prefix');
     }
@@ -47,7 +47,7 @@ class Html extends \yii\helpers\Html
      * @param mixed $contentSize use integer to set size, string to set class or array to use as htmlOptions. Defaults to null.
      * @return $this
      */
-    public function prefixHtml($affix, $content, $affixSize = 2, $contentSize = null)
+    static function prefixHtml($affix, $content, $affixSize = 2, $contentSize = null)
     {
         return self::affixHtml($affix, $content, $affixSize, $contentSize, 'prefix');
     }
@@ -67,7 +67,7 @@ class Html extends \yii\helpers\Html
      * @param mixed $contentSize use integer to set size, string to set class or array to use as htmlOptions. Defaults to 0.
      * @return $this
      */
-    public function prefixButton($affix, $url = null, $options, $content, $affixSize = 2, $contentSize = null)
+    static function prefixButton($affix, $url = null, $options, $content, $affixSize = 2, $contentSize = null)
     {
         return self::affixButton($affix, $url, $options, $content, $affixSize, $contentSize, 'prefix');
     }
@@ -86,7 +86,7 @@ class Html extends \yii\helpers\Html
      * @param string $class Defaults to "suffix".
      * @return $this
      */
-    public function suffixText($affix, $content, $affixSize = 2, $contentSize = null, $class="postfix")
+    static function suffixText($affix, $content, $affixSize = 2, $contentSize = null, $class="postfix")
     {
         return self::affixText($affix, $content, $affixSize, $contentSize, $class, 'suffix');
     }
@@ -104,7 +104,7 @@ class Html extends \yii\helpers\Html
      * @param mixed $contentSize use integer to set size, string to set class or array to use as htmlOptions. Defaults to null.
      * @return $this
      */
-    public function suffixHtml($affix, $content, $affixSize = 2, $contentSize = null)
+    static function suffixHtml($affix, $content, $affixSize = 2, $contentSize = null)
     {
         return self::affixHtml($affix, $content, $affixSize, $contentSize, 'suffix');
     }
@@ -124,7 +124,7 @@ class Html extends \yii\helpers\Html
      * @param mixed $contentSize use integer to set size, string to set class or array to use as htmlOptions. Defaults to 0.
      * @return $this
      */
-    public function suffixButton($affix, $url = null, $options, $content, $affixSize = 2, $contentSize = null)
+    static function suffixButton($affix, $url = null, $options, $content, $affixSize = 2, $contentSize = null)
     {
         return self::affixButton($affix, $url, $options, $content, $affixSize, $contentSize, 'suffix');
     }
@@ -139,7 +139,7 @@ class Html extends \yii\helpers\Html
      * @param $affixType
      * @return string
      */
-    public function affixText($affix, $content, $affixSize = 2, $contentSize = null, $class, $affixType)
+    static function affixText($affix, $content, $affixSize = 2, $contentSize = null, $class, $affixType)
     {
         $affixElement = Html::tag('span', $affix, array('class'=>$class));
 
@@ -157,7 +157,7 @@ class Html extends \yii\helpers\Html
      * @param $affixType
      * @return string
      */
-    public function affixButton($affix, $url = null, $options, $content, $affixSize = 2, $contentSize = null, $affixType)
+    static function affixButton($affix, $url = null, $options, $content, $affixSize = 2, $contentSize = null, $affixType)
     {
         if ($url !== null) {
             $options['href'] = self::url($url);
@@ -180,7 +180,7 @@ class Html extends \yii\helpers\Html
      * @return string
      * @throws \yii\base\InvalidCallException
      */
-    private function affixHtml($affix, $content, $affixSize = 2, $contentSize = null, $affixType)
+    static function affixHtml($affix, $content, $affixSize = 2, $contentSize = null, $affixType)
     {
         if(!$affixSize)
             throw new InvalidCallException('$affixSize can\'t be empty');
@@ -205,7 +205,7 @@ class Html extends \yii\helpers\Html
      * @param $content
      * @return string
      */
-    private function CreateAffixContainer($mixed, $content)
+    static function CreateAffixContainer($mixed, $content)
     {
         if(is_integer($mixed)){
             return Html::tag('div', $content, array('class'=>'small-'.$mixed.' columns'));
@@ -221,7 +221,7 @@ class Html extends \yii\helpers\Html
     }
 
 
-    public static function switchList($name, $selection = null, $items, $options = array())
+    static function switchList($name, $selection = null, $items, $options = array())
     {
         $encode = !isset($options['encode']) || $options['encode'];
         $options['name'] = $name;
@@ -246,7 +246,7 @@ class Html extends \yii\helpers\Html
 
 
 
-    public static function activeSwitchList($model, $attribute, $items, $options)
+    static function activeSwitchList($model, $attribute, $items, $options)
     {
         Html::addCssClass($options, 'switch');
         $name = isset($options['name']) ? $options['name'] : static::getInputName($model, $attribute);

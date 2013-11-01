@@ -5,9 +5,9 @@
  * Time: 22:14
  */
 
-namespace vendor\simpletree\yii2foundation;
+namespace Simpletree\Foundation;
 
-use vendor\simpletree\yii2foundation\Html;
+use Simpletree\Foundation\Html;
 
 /**
  * Button renders a bootstrap button.

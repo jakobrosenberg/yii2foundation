@@ -7,27 +7,32 @@
 
 namespace Simpletree\Foundation;
 
+use yii\base\View;
 use yii\web\AssetBundle;
 
+\Yii::setAlias('simpletree/foundation',__DIR__);
 /**
  *
  * @author Jakob Rosenberg <jakobrosenberg@gmail.com>
  */
 class FoundationPluginAsset extends AssetBundle
 {
-	public $sourcePath = '@vendor/simpletree/yii2foundation/assets';
+	public $sourcePath = '@simpletree/foundation/assets';
 	public $js = array(
 		'js/foundation/foundation.js',
 		'js/foundation/foundation.forms.js',
 	);
+    public $jsOptions = array(
+//        'position' => View::POS_HEAD,
+    );
 	public $depends = array(
 		'yii\web\JqueryAsset',
 		'Simpletree\Foundation\FoundationAsset',
 	);
 
-    public function registerAssets($view){
-        parent::registerAssets($view);
+    public function registerAssetFiles($view)
+    {
         $view->registerJs('$(document).foundation();', $view::POS_END);
-
+        parent::registerAssetFiles($view);
     }
 }

@@ -5,10 +5,10 @@
  * Time: 08:18
  */
 
-namespace vendor\simpletree\yii2foundation;
+namespace Simpletree\Foundation;
 
 use Yii;
-use vendor\simpletree\yii2foundation\Html;
+use Simpletree\Foundation\Html;
 
 
 class SubNav extends NavigationBaseWidget

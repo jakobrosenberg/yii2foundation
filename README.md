@@ -18,7 +18,7 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $depends = array(
         'yii\web\YiiAsset',
-        'simpletree\foundation\FoundationAsset'
+        'Simpletree\Foundation\FoundationAsset'
     );
 }
 ```
